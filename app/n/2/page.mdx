@@ -1,135 +1,27 @@
 export const metadata = {
-  title: '6 Sneaky JavaScript Patterns to Cut Boilerplate',
+  title: 'cotask - collaborative task management',
   alternates: {
     canonical: '/n/2',
   },
 };
 
-# 6 Sneaky JavaScript Patterns to Cut Boilerplate
+# cotask - collaborative task management
 
 <br />
 
-Micro-optimizations and quality-of-life hacks to keep your scripts lean, readable, and bug-resistant.
+cotask is a full-stack task management app built for teams that need to plan and track work together in real time. users create workspaces, assign tasks, set due dates, and see updates from teammates land instantly without refreshing the page.
 
-## 1. **Optional Chaining `?.` + Nullish Coalescing `??`**
+authentication is handled with nextauth.js so teams can sign in securely and manage access per workspace. all task data is persisted in a d1 sql database, and the frontend uses tanstack query to keep the ui in sync with the server, caching reads and rolling back optimistic updates if a write fails. the result is a responsive interface where multiple people can edit the same board at once without stepping on each other's changes.
 
-Stop writing five nested guards:
+## tech stack
 
-```js
-// Old
-const theme = user && user.settings && user.settings.theme
-  ? user.settings.theme
-  : 'light';
+- **frontend:** next.js, tailwind css, tanstack query
+- **auth:** nextauth.js
+- **database:** cloudflare d1 (sql)
+- **languages:** typescript
 
-// New
-const theme = user?.settings?.theme ?? 'light';
-````
+## links
 
-Fewer lines, same safety.
+- [github](https://github.com/Arjunnaikk)
 
----
-
-## 2. **Barrel Files for One-Line Imports**
-
-Aggregate related exports into a single “barrel” file:
-
-```js
-// utils/index.js
-export * from './format';
-export * from './validate';
-export * from './fetch';
-
-// SomeComponent.js
-import { formatDate, validateEmail, getJSON } from '@/utils';
-```
-
-Kill import clutter without sacrificing tree-shaking.
-
----
-
-## 3. **Memoize Pure Functions with a `WeakMap`**
-
-Cache heavy computations tied to objects—no leaks:
-
-```js
-const cache = new WeakMap();
-
-export function expensive(obj) {
-  if (cache.has(obj)) return cache.get(obj);
-  const result = crunchNumbers(obj); // 🚀 costly
-  cache.set(obj, result);
-  return result;
-}
-```
-
-Results follow the object’s lifetime—GC does the cleanup.
-
----
-
-## 4. **Tagged Template Literals for Safe HTML**
-
-Prevent XSS without a third-party lib:
-
-```js
-const escape = (strings, ...values) =>
-  strings.reduce(
-    (acc, str, i) =>
-      acc +
-      str +
-      (values[i]
-        ? String(values[i]).replace(/[&<>"']/g, (s) => ({
-            '&': '&amp;',
-            '<': '&lt;',
-            '>': '&gt;',
-            '"': '&quot;',
-            "'": '&#39;',
-          })[s])
-        : ''),
-    '',
-  );
-
-const name = '<script>alert(1)</script>';
-document.body.innerHTML = escape`<p>Hello, ${name}!</p>`;
-```
-
-Zero dependencies, maximum safety.
-
----
-
-## 5. **`AbortController` for Cancellable `fetch`**
-
-Stop orphaning network calls on route changes:
-
-```js
-const controller = new AbortController();
-const { signal } = controller;
-
-fetch('/api/data', { signal })
-  .then((r) => r.json())
-  .catch((e) => {
-    if (e.name !== 'AbortError') throw e;
-  });
-
-// later…
-controller.abort();
-```
-
-No more “state update on unmounted component” warnings.
-
----
-
-## 6. **Format Like a Native with `Intl`**
-
-Forget custom helpers—use the built-ins:
-
-```js
-const usd = new Intl.NumberFormat('en-US', {
-  style: 'currency',
-  currency: 'USD',
-}).format(1999.99); // "$1,999.99"
-
-const isoDate = new Intl.DateTimeFormat('sv-SE').format(new Date());
-// "2025-06-05"
-```
-
-Locale-aware, performant, and zero bloat.
+note: built october 2024

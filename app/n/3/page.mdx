@@ -1,108 +1,27 @@
 export const metadata = {
-  title: '6 CSS Patterns to Cut Boilerplate',
+  title: 'pesca - dsa learning & visualisation platform',
   alternates: {
     canonical: '/n/3',
   },
-}; 
+};
 
-# 6 CSS Patterns to Cut Boilerplate
+# pesca - dsa learning & visualisation platform
 
 <br />
 
-Micro-optimizations and quality-of-life hacks to keep your styles tight, maintainable, and future-proof.
+pesca is a unified learning ecosystem for data structures and algorithms, built to replace static tutorials with something you can actually watch run. students step through algorithms in an interactive visualizer and write, test, and run code side by side in a built-in multi-language ide.
 
-## 1. **`:where()` for Zero-Specificity Resets**
+the visualization module is animated with gsap, walking through each step, comparison, and pointer movement so the logic is visible rather than abstract. beyond visualizing, pesca includes an assessment module that auto-scores mcqs, tracks individual student progress, and gives teachers an administration hub for performance insights. the backend runs entirely on cloudflare workers with a d1 (sqlite) database, keeping the whole platform serverless and low-latency.
 
-Stop fighting cascade weight—wrap base rules in `:where()`:
+## tech stack
 
-```css
-:where(h1, h2, h3) {
-  font-weight: 600;
-  line-height: 1.2;
-  margin: 0;
-}
-````
+- **frontend:** next.js, gsap
+- **backend:** cloudflare workers
+- **database:** cloudflare d1 (sqlite)
+- **languages:** typescript
 
-Selectors inside `:where()` weigh *0*, so your utility classes still win.
+## links
 
----
+- [github](https://github.com/Som-Prajapati/PESCA-Your-Companion-for-DSA-Mastery)
 
-## 2. **Logical Properties > Four-Direction Madness**
-
-Goodbye `padding-left` vs. `padding-right`. One line covers LTR *and* RTL:
-
-```css
-.card {
-  padding-inline: 1rem;  /* left & right */
-  padding-block: 0.75rem; /* top & bottom */
-}
-```
-
-No more media-query hacks when direction changes.
-
----
-
-## 3. **Style Parent Elements with `:has()`**
-
-JavaScript who? Let CSS drive state:
-
-```css
-/* Outline group when any input is invalid */
-.form:has(input:invalid) {
-  outline: 2px solid var(--danger);
-}
-```
-
-Parent-aware styling—finally native.
-
----
-
-## 4. **Container Queries for Truly Responsive Components**
-
-Skip breakpoint soup; size to *context* instead of viewport:
-
-```css
-.card {
-  container-type: inline-size;
-}
-
-@container (max-width: 350px) {
-  .card {
-    grid-template-columns: 1fr; /* stack on narrow cards */
-  }
-}
-```
-
-Components that adapt wherever you drop them.
-
----
-
-## 5. **`accent-color` & `color-scheme` → Native Theming**
-
-Theme form controls and scrollbars with one property:
-
-```css
-:root {
-  color-scheme: dark light;
-  accent-color: hsl(265 87% 67%); /* 💜 */
-}
-```
-
-Instant brand vibes, zero third-party widgets.
-
----
-
-## 6. **`@layer` to Tame the Cascade**
-
-Group utilities, components, and overrides—predictably:
-
-```css
-@layer reset, base, utilities, components, overrides;
-
-/* later in the file… */
-@layer utilities {
-  .text-center { text-align: center; }
-}
-```
-
-No more “why is Tailwind beating my button styles?”.
+note: built october 2025

@@ -1,0 +1,30 @@
+export const metadata = {
+  title: 'mywallet - premium minimalist finance hub',
+  alternates: {
+    canonical: '/n/4',
+  },
+};
+
+# mywallet - premium minimalist finance hub
+
+<br />
+
+mywallet is a personal finance tracker and conversational ledger assistant with a stark neobrutalist design system: high-contrast borders, thick offset shadows, and a dedicated mobile bottom nav. the dashboard shows live totals for income, expenses, net savings, and net worth across multiple wallets (cash, bank, credit card), with recharts-based breakdowns by category.
+
+the standout feature is the gemini-powered ai layer: typing something like "spent ₹250 on pizza from bank yesterday" auto-fills the transaction form, receipts can be uploaded and parsed via ocr for merchant, amount, and date, and a chat workspace answers questions about spending and budget compliance directly from your ledger. if the gemini api hits a rate limit, the backend falls back to a local regex parser and a rules-based advisor so the app keeps working offline, and syncs everything to supabase once you're signed in.
+
+## tech stack
+
+- **framework:** next.js 14 (app router, server actions)
+- **database:** supabase (postgresql)
+- **auth:** nextauth.js (google oauth + credentials)
+- **ai:** google gemini api (gemini-2.0-flash)
+- **styling:** tailwind css, lucide react
+- **charts:** recharts
+
+## links
+
+- [live demo](https://my-wallet-ef8o-sandy.vercel.app/)
+- [github](https://github.com/Arjunnaikk/My-Wallet)
+
+note: local-first, tracks finances offline via localStorage and syncs to the cloud on sign-in.

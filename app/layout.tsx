@@ -6,15 +6,15 @@ import { Analytics } from '@vercel/analytics/react';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://next-mdx-blog.vercel.app'),
+  metadataBase: new URL('https://arjun-portfolio.vercel.app'), // TODO: replace with your real deployed URL
   alternates: {
     canonical: '/'
   },
   title: {
-    default: 'John Smith',
-    template: '%s | John Smith'
+    default: 'Arjun Naik',
+    template: '%s | Arjun Naik'
   },
-  description: 'My portfolio, blog, and personal website.'
+  description: 'Full-stack developer, Solana builder, and computer engineering student based in Mumbai, India.'
 };
 
 export default function RootLayout({
@@ -24,13 +24,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.className}`}>
-      <body className="antialiased tracking-tight">
-        <div className="min-h-screen flex flex-col justify-between pt-0 md:pt-8 p-8 dark:bg-zinc-950 bg-white text-gray-900 dark:text-zinc-200">
-          <main className="max-w-[60ch] mx-auto w-full space-y-6">
+      <body className="antialiased tracking-tight bg-[#050505] text-zinc-100">
+        <div className="relative min-h-screen overflow-hidden">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.12),_transparent_34%),radial-gradient(circle_at_bottom_right,_rgba(34,197,94,0.08),_transparent_24%)]" />
+          <div className="relative flex min-h-screen flex-col justify-between px-6 pt-12 pb-8 md:px-10 md:pt-16 md:pb-10">
+          <main className="mx-auto w-full max-w-4xl space-y-6">
             {children}
           </main>
           <Footer />
           <Analytics />
+          </div>
         </div>
       </body>
     </html>
@@ -39,22 +42,21 @@ export default function RootLayout({
 
 function Footer() {
   const links = [
-    { name: '@johnsmith', url: 'https://x.com/johnsmith' },
-    { name: 'youtube', url: 'https://www.youtube.com/@johnsmith' },
-    { name: 'linkedin', url: 'https://www.linkedin.com/in/johnsmith' },
-    { name: 'github', url: 'https://github.com/johnsmith' }
+    { name: 'email', url: 'mailto:naikarjun0402@gmail.com' },
+    { name: 'github', url: 'https://github.com/Arjunnaikk' },
+    { name: 'linkedin', url: 'https://www.linkedin.com/in/Arjunnaikk' } // TODO: confirm this is your actual LinkedIn handle
   ];
 
   return (
     <footer className="mt-12 text-center">
-      <div className="flex justify-center space-x-4 tracking-tight">
+      <div className="flex flex-wrap justify-center gap-4 tracking-tight">
         {links.map((link) => (
           <a
             key={link.name}
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 dark:text-gray-500 hover:text-blue-500 transition-colors duration-200"
+            className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-zinc-400 transition-colors duration-200 hover:border-sky-400/30 hover:text-sky-200"
           >
             {link.name}
           </a>

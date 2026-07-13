@@ -1,0 +1,28 @@
+export const metadata = {
+  title: 'meetwise - collaborative geospatial decision platform',
+  alternates: {
+    canonical: '/n/5',
+  },
+};
+
+# meetwise - collaborative geospatial decision platform
+
+<br />
+
+meetwise solves the "where should we meet" problem for group chats. instead of treating everyone as a straight-line distance to a geometric midpoint, it scans real road networks in parallel to minimize the worst commute in the group, lets certain members (like a host or client) pull the meeting point closer to them via travel-weight priorities, and can exclude outliers, like someone visiting from another city, from the calculation while still tracking their route.
+
+a room syncs in real time across every connected device over server-sent events, no external websocket server needed, and renders an interactive leaflet map with real street routing, mumbai metro line traces, and one-tap uber, rapido, and metro-ticket booking links per member. a vibe assistant parses natural language like "somewhere quiet and good for work, budget around 800" straight into the group's filters, and venue discovery is backed by nominatim, overpass, and osrm with a redis-cached (in-memory fallback) geo-grid to stay under rate limits.
+
+## tech stack
+
+- **framework:** next.js (app router, sse streaming)
+- **database:** sqlite via prisma orm
+- **maps:** leaflet
+- **geospatial:** nominatim, overpass api, osrm
+- **caching:** redis (ioredis) with in-memory fallback
+
+## links
+
+- [github](https://github.com/Arjunnaikk/MeetWise)
+
+note: supports a local offline sandbox mode alongside real-time shared rooms.

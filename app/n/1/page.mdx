@@ -1,66 +1,27 @@
 export const metadata = {
-  title: '5 Tiny CLI Tricks You (Probably) Didn’t Know',
+  title: 'meblog - decentralized blogging platform',
   alternates: {
     canonical: '/n/1',
   },
 };
 
-# 5 Tiny CLI Tricks You (Probably) Didn’t Know
+# meblog - decentralized blogging platform
 
 <br />
 
-A lightning-round of command-line nuggets to level-up your dev workflow.
+meblog is a full-stack web3 blogging platform built on solana, where every post is published and owned on-chain. writers connect a wallet, publish through a rust-based anchor smart contract, and get censorship-resistant, verifiable ownership over what they write, no centralized server can take a post down or reassign it.
 
-## 1. **`history | grep` + `fzf` = instant recall**
+each author's posts live under a program derived address (pda), generated deterministically so the chain can locate and validate content without a central registry. the smart contract enforces the platform's business rules directly at the protocol level, and the frontend uses tanstack query to fetch, cache, and keep on-chain state in sync in real time, with solana wallet adapters handling transaction signing.
 
-Fish out that elusive command you ran last Tuesday:
+## tech stack
 
-```bash
-history | grep docker | fzf
-````
+- **frontend:** next.js, tanstack query
+- **blockchain:** solana, anchor, rust smart contracts
+- **wallets:** solana wallet adapter
+- **languages:** typescript, rust
 
-Hit **Enter** and it pastes right back to your prompt like magic.
+## links
 
----
+- [github](https://github.com/Arjunnaikk)
 
-## 2. **Reverse-search a Git log by file *content***
-
-Combine `git log` with `-S` (search diff) to find when a string first appeared:
-
-```bash
-git log -S"resizeObserver" --oneline -- src/components/Layout.tsx
-```
-
----
-
-## 3. **JSON-pretty print … with zero dependencies**
-
-Mac & Linux already ship with `python3`:
-
-```bash
-cat response.json | python3 -m json.tool | less
-```
-
----
-
-## 4. **One-liner port-forwarding for quick demos**
-
-Need to expose `localhost:3000`? Use SSH—no ngrok token needed.
-
-```bash
-ssh -R 80:localhost:3000 ssh.localhost.run
-```
-
-Now share the generated URL on Slack and watch eyebrows rise.
-
----
-
-## 5. **Measure *anything* with `time` + subshell**
-
-How long does your linter actually take?
-
-```bash
-time (npm run lint > /dev/null)
-```
-
-> 💡 *Pro-tip:* wrap this in a `pre-push` hook so slow commands get caught early.
+note: built september 2025
