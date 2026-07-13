@@ -2,6 +2,8 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
+import Navbar from '../components/Navbar';
+import InteractiveBackground from '../components/InteractiveBackground';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -25,14 +27,16 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.className}`}>
       <body className="antialiased tracking-tight bg-[#050505] text-zinc-100">
+        <InteractiveBackground />
+        <Navbar />
         <div className="relative min-h-screen overflow-hidden">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.12),_transparent_34%),radial-gradient(circle_at_bottom_right,_rgba(34,197,94,0.08),_transparent_24%)]" />
-          <div className="relative flex min-h-screen flex-col justify-between px-6 pt-12 pb-8 md:px-10 md:pt-16 md:pb-10">
-          <main className="mx-auto w-full max-w-4xl space-y-6">
-            {children}
-          </main>
-          <Footer />
-          <Analytics />
+          <div className="relative flex min-h-screen flex-col justify-between px-6 pt-24 pb-8 md:px-10 md:pt-28 md:pb-10">
+            <main className="mx-auto w-full max-w-4xl space-y-6">
+              {children}
+            </main>
+            <Footer />
+            <Analytics />
           </div>
         </div>
       </body>
