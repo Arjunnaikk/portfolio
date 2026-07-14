@@ -1,11 +1,19 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Outfit, Plus_Jakarta_Sans } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import Navbar from '../components/Navbar';
 import InteractiveBackground from '../components/InteractiveBackground';
 
-const inter = Inter({ subsets: ['latin'] });
+const outfit = Outfit({
+  subsets: ['latin'],
+  variable: '--font-outfit',
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  variable: '--font-plus-jakarta-sans',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://arjun-portfolio.vercel.app'), // TODO: replace with your real deployed URL
@@ -25,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.className}`}>
+    <html lang="en" className={`${outfit.variable} ${plusJakartaSans.variable}`} data-scroll-behavior="smooth">
       <body className="antialiased tracking-tight bg-[#050505] text-zinc-100">
         <InteractiveBackground />
         <Navbar />

@@ -1,3 +1,5 @@
+import ProjectHeader from '../../../components/ProjectHeader';
+
 export const metadata = {
   title: 'gibmoni - milestone-based crowdfunding on solana',
   alternates: {
@@ -5,9 +7,13 @@ export const metadata = {
   },
 };
 
-# gibmoni - milestone-based crowdfunding on solana
-
-<br />
+<ProjectHeader
+  title="gibmoni"
+  category="Funding"
+  date="December 2025"
+  demo="https://gibmoni.vercel.app/"
+  github="https://github.com/Arjunnaikk/capstone"
+/>
 
 gibmoni is a crowdfunding platform built to fix the trust gap in on-chain fundraising: funds are locked in a central vault and released to the creator only in stages, as milestones are approved, instead of handing over the full amount up front. contributors get a real say through weighted community voting rather than just hoping the team delivers.
 
@@ -19,9 +25,4 @@ each milestone goes through a voting period where funder voting power scales wit
 - **automation:** helium tuktuk (crank-turner)
 - **frontend:** next.js
 
-## links
-
-- [live demo](https://gibmoni.vercel.app/)
-- [github](https://github.com/parthesh28/gibmoni)
-
-note: funding/voting rules — max 5 milestones per project, up to 3 attempts per milestone before a project is marked failed.
+_note: funding/voting rules — max 5 milestones per project, up to 3 attempts per milestone before a project is marked failed._

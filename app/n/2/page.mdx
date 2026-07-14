@@ -1,3 +1,5 @@
+import ProjectHeader from '../../../components/ProjectHeader';
+
 export const metadata = {
   title: 'cotask - collaborative task management',
   alternates: {
@@ -5,9 +7,13 @@ export const metadata = {
   },
 };
 
-# cotask - collaborative task management
-
-<br />
+<ProjectHeader
+  title="cotask"
+  category="Real-time"
+  date="October 2024"
+  demo="https://cotask-sage.vercel.app"
+  github="https://github.com/Arjunnaikk/CoTasks1.0"
+/>
 
 cotask is a full-stack task management app built for teams that need to plan and track work together in real time. users create workspaces, assign tasks, set due dates, and see updates from teammates land instantly without refreshing the page.
 
@@ -19,9 +25,3 @@ authentication is handled with nextauth.js so teams can sign in securely and man
 - **auth:** nextauth.js
 - **database:** cloudflare d1 (sql)
 - **languages:** typescript
-
-## links
-
-- [github](https://github.com/Arjunnaikk)
-
-note: built october 2024

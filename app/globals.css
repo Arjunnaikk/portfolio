@@ -1,7 +1,8 @@
 @import 'tailwindcss';
 
 @theme {
-  --font-family-sans: 'Inter', sans-serif;
+  --font-family-sans: var(--font-plus-jakarta-sans), 'Inter', sans-serif;
+  --font-family-display: var(--font-outfit), sans-serif;
 }
 
 :root {
@@ -37,6 +38,7 @@ h1,
 h2,
 h3,
 h4 {
+  font-family: var(--font-family-display);
   text-wrap: balance;
 }
 

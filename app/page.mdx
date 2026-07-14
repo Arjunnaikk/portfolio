@@ -1,5 +1,9 @@
 import GlowCard from '../components/GlowCard';
 import AnimateIn from '../components/AnimateIn';
+import ProjectsSection from '../components/ProjectsSection';
+import TerminalConsole from '../components/TerminalConsole';
+
+
 
 export const metadata = {
   title: 'Arjun Naik',
@@ -13,48 +17,21 @@ export const metadata = {
   <AnimateIn viewTrigger={false} direction="up" delay={0.15}>
     <header className="space-y-6">
       <div className="space-y-4">
-        <h1 className="max-w-xl text-4xl font-semibold tracking-tight text-white md:text-6xl">
-          Arjun Naik
-        </h1>
+        <h1 className="max-w-xl text-4xl font-semibold tracking-tight text-white md:text-6xl">Arjun Naik</h1>
 
-        <p className="max-w-2xl text-base leading-7 text-zinc-300 md:text-lg md:leading-8">
-          Full-stack developer, final-year computer engineering student, and
-          Solana / web3 builder based in Mumbai, India.
-        </p>
+        <p className="max-w-2xl text-base leading-7 text-zinc-300 md:text-lg md:leading-8">Full-stack developer, final-year computer engineering student, and Solana / web3 builder based in Mumbai, India.</p>
       </div>
 
       <div className="flex flex-wrap gap-3 text-sm text-zinc-300">
-        <span className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-4 py-2 text-emerald-200">
-          Shipping product ideas
-        </span>
-        <span className="rounded-full border border-sky-400/20 bg-sky-400/10 px-4 py-2 text-sky-200">
-          Full-stack + web3
-        </span>
-        <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-zinc-300">
-          Mumbai, India
-        </span>
+        <span className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-4 py-2 text-emerald-200">Shipping product ideas</span>
+        <span className="rounded-full border border-sky-400/20 bg-sky-400/10 px-4 py-2 text-sky-200">Full-stack + web3</span>
+        <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-zinc-300">Mumbai, India</span>
       </div>
     </header>
   </AnimateIn>
 
   <AnimateIn direction="up" delay={0.2}>
-    <section className="grid gap-4 sm:grid-cols-2">
-      <GlowCard glowColor="emerald" className="h-full">
-        <p className="text-xs uppercase tracking-[0.24em] text-zinc-500">Current focus</p>
-        <p className="mt-4 text-sm leading-7 text-zinc-300">
-          Building polished developer tools, real-time collaboration experiences,
-          and fast, opinionated interfaces that feel useful on day one.
-        </p>
-      </GlowCard>
-
-      <GlowCard glowColor="sky" className="h-full">
-        <p className="text-xs uppercase tracking-[0.24em] text-zinc-500">What I like</p>
-        <p className="mt-4 text-sm leading-7 text-zinc-300">
-          Clear UX, sharp typography, performance-minded frontend work, and
-          products that can be explained in one sentence.
-        </p>
-      </GlowCard>
-    </section>
+    <TerminalConsole />
   </AnimateIn>
 
   <section className="space-y-5">
@@ -63,71 +40,7 @@ export const metadata = {
       <p className="text-sm text-zinc-500">Selected work and experiments</p>
     </div>
 
-    <AnimateIn stagger={true} staggerDelay={0.06} className="grid gap-4">
-      <GlowCard href="/n/1" glowColor="sky" className="group">
-        <div className="flex items-center justify-between gap-3">
-          <span className="text-base font-medium text-white group-hover:text-sky-200">meblog</span>
-          <span className="text-xs uppercase tracking-[0.24em] text-zinc-500">solana</span>
-        </div>
-        <p className="mt-3 text-sm leading-7 text-zinc-400">Decentralized blogging platform on Solana.</p>
-      </GlowCard>
-
-      <GlowCard href="/n/2" glowColor="sky" className="group">
-        <div className="flex items-center justify-between gap-3">
-          <span className="text-base font-medium text-white group-hover:text-sky-200">cotask</span>
-          <span className="text-xs uppercase tracking-[0.24em] text-zinc-500">realtime</span>
-        </div>
-        <p className="mt-3 text-sm leading-7 text-zinc-400">Collaborative task management app with real-time sync.</p>
-      </GlowCard>
-
-      <GlowCard href="/n/3" glowColor="sky" className="group">
-        <div className="flex items-center justify-between gap-3">
-          <span className="text-base font-medium text-white group-hover:text-sky-200">pesca</span>
-          <span className="text-xs uppercase tracking-[0.24em] text-zinc-500">education</span>
-        </div>
-        <p className="mt-3 text-sm leading-7 text-zinc-400">DSA learning and visualization platform with a multi-language IDE.</p>
-      </GlowCard>
-
-      <GlowCard href="/n/4" glowColor="sky" className="group">
-        <div className="flex items-center justify-between gap-3">
-          <span className="text-base font-medium text-white group-hover:text-sky-200">mywallet</span>
-          <span className="text-xs uppercase tracking-[0.24em] text-zinc-500">ai</span>
-        </div>
-        <p className="mt-3 text-sm leading-7 text-zinc-400">AI-powered personal finance tracker and conversational ledger.</p>
-      </GlowCard>
-
-      <GlowCard href="/n/5" glowColor="sky" className="group">
-        <div className="flex items-center justify-between gap-3">
-          <span className="text-base font-medium text-white group-hover:text-sky-200">meetwise</span>
-          <span className="text-xs uppercase tracking-[0.24em] text-zinc-500">maps</span>
-        </div>
-        <p className="mt-3 text-sm leading-7 text-zinc-400">Collaborative geospatial platform for finding the fairest meeting spot.</p>
-      </GlowCard>
-
-      <GlowCard href="/n/6" glowColor="sky" className="group">
-        <div className="flex items-center justify-between gap-3">
-          <span className="text-base font-medium text-white group-hover:text-sky-200">solfit</span>
-          <span className="text-xs uppercase tracking-[0.24em] text-zinc-500">web3</span>
-        </div>
-        <p className="mt-3 text-sm leading-7 text-zinc-400">Blockchain-powered fitness accountability platform.</p>
-      </GlowCard>
-
-      <GlowCard href="/n/7" glowColor="sky" className="group">
-        <div className="flex items-center justify-between gap-3">
-          <span className="text-base font-medium text-white group-hover:text-sky-200">gibmoni</span>
-          <span className="text-xs uppercase tracking-[0.24em] text-zinc-500">funding</span>
-        </div>
-        <p className="mt-3 text-sm leading-7 text-zinc-400">Milestone-based crowdfunding platform on Solana.</p>
-      </GlowCard>
-
-      <GlowCard href="/n/8" glowColor="sky" className="group">
-        <div className="flex items-center justify-between gap-3">
-          <span className="text-base font-medium text-white group-hover:text-sky-200">fast io</span>
-          <span className="text-xs uppercase tracking-[0.24em] text-zinc-500">java</span>
-        </div>
-        <p className="mt-3 text-sm leading-7 text-zinc-400">High-performance Java I/O library for competitive programming.</p>
-      </GlowCard>
-    </AnimateIn>
+    <ProjectsSection />
   </section>
 
   <section className="space-y-5">
@@ -137,6 +50,11 @@ export const metadata = {
     </div>
 
     <AnimateIn stagger={true} staggerDelay={0.08} className="grid gap-4">
+      <GlowCard glowColor="white">
+        <p className="text-base font-medium text-white">school of solana season 7</p>
+        <p className="mt-2 text-sm leading-7 text-zinc-400">Ackee Blockchain Security · Sep 2025 · Credential ID: Arjunnaikk</p>
+      </GlowCard>
+
       <GlowCard glowColor="white">
         <p className="text-base font-medium text-white">sdac infotech</p>
         <p className="mt-2 text-sm leading-7 text-zinc-400">Full stack development intern · Aug 2024 - Jan 2025</p>

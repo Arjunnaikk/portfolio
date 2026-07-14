@@ -53,6 +53,7 @@ export default function Navbar() {
     { name: "home", href: "/" },
     { name: "projects", href: "/#projects" },
     { name: "experience", href: "/#experience" },
+    { name: "resume", href: "/resume.pdf", isDownload: true },
   ];
 
   return (
@@ -98,6 +99,20 @@ export default function Navbar() {
             ) : (
               navItems.map((item) => {
                 const isActive = activeSection === item.name;
+                if (item.isDownload) {
+                  return (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      download="Arjun_Naik_Resume.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative rounded-full px-3 py-1.5 text-xs font-medium tracking-tight text-zinc-400 transition-colors duration-200 hover:text-zinc-100"
+                    >
+                      <span className="relative z-10">{item.name}</span>
+                    </a>
+                  );
+                }
                 return (
                   <Link
                     key={item.name}

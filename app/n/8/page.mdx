@@ -1,3 +1,5 @@
+import ProjectHeader from '../../../components/ProjectHeader';
+
 export const metadata = {
   title: 'fast io - high-performance java i/o library',
   alternates: {
@@ -5,9 +7,12 @@ export const metadata = {
   },
 };
 
-# fast io - high-performance java i/o library
-
-<br />
+<ProjectHeader
+  title="fast io"
+  category="Java"
+  date="September 2024"
+  github="https://github.com/Arjunnaikk/fast-io-lib"
+/>
 
 fast io is a lightweight java library for reading and writing input fast enough to survive competitive programming time limits. standard java.util.scanner is slow because it parses every token with regex, which is often enough to cause a "time limit exceeded" verdict on large inputs. fast io replaces that with a buffered reader for bulk reads and a stringtokenizer for splitting, skipping regex entirely.
 
@@ -19,8 +24,4 @@ it covers all the common competitive-programming needs: reading and writing ever
 - **core:** bufferedreader, bufferedwriter, stringtokenizer
 - **distribution:** maven / gradle package
 
-## links
-
-- [github](https://github.com/Arjunnaikk/fast-io-lib)
-
-note: ~3x faster than java.util.Scanner on a 10-million-integer read benchmark.
+_note: ~3x faster than java.util.Scanner on a 10-million-integer read benchmark._

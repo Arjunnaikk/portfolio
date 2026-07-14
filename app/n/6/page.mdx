@@ -1,3 +1,5 @@
+import ProjectHeader from '../../../components/ProjectHeader';
+
 export const metadata = {
   title: 'solfit - blockchain-powered fitness accountability platform',
   alternates: {
@@ -5,9 +7,12 @@ export const metadata = {
   },
 };
 
-# solfit - blockchain-powered fitness accountability platform
-
-<br />
+<ProjectHeader
+  title="solfit"
+  category="Web3"
+  date="January 2025"
+  github="https://github.com/Arjunnaikk/solfit"
+/>
 
 solfit turns step-count fitness challenges into a trustless prize pool. participants join a challenge by paying an entry fee into an on-chain escrow account, and anyone who hits their daily step goal for the full duration wins their stake back plus a share of what the people who failed put in. everything, creation, participation, syncing, and payout, is enforced by solana smart contracts, so there's no organizer who could run off with the pool.
 
@@ -19,8 +24,4 @@ step data is pulled from google fit / health connect and cryptographically signe
 - **blockchain:** solana, anchor smart contracts (rust)
 - **backend:** cloudflare workers (health data verification)
 
-## links
-
-- [github](https://github.com/Arjunnaikk/solfit)
-
-note: rewards are held in on-chain escrow and distributed automatically by smart contract once a challenge ends.
+_note: rewards are held in on-chain escrow and distributed automatically by smart contract once a challenge ends._

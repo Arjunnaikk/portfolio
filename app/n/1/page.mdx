@@ -1,3 +1,5 @@
+import ProjectHeader from '../../../components/ProjectHeader';
+
 export const metadata = {
   title: 'meblog - decentralized blogging platform',
   alternates: {
@@ -5,9 +7,13 @@ export const metadata = {
   },
 };
 
-# meblog - decentralized blogging platform
-
-<br />
+<ProjectHeader
+  title="meblog"
+  category="Solana"
+  date="September 2025"
+  demo="https://me-blog-alpha.vercel.app"
+  github="https://github.com/Arjunnaikk/meBlog-sol"
+/>
 
 meblog is a full-stack web3 blogging platform built on solana, where every post is published and owned on-chain. writers connect a wallet, publish through a rust-based anchor smart contract, and get censorship-resistant, verifiable ownership over what they write, no centralized server can take a post down or reassign it.
 
@@ -19,9 +25,3 @@ each author's posts live under a program derived address (pda), generated determ
 - **blockchain:** solana, anchor, rust smart contracts
 - **wallets:** solana wallet adapter
 - **languages:** typescript, rust
-
-## links
-
-- [github](https://github.com/Arjunnaikk)
-
-note: built september 2025

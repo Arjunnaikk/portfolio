@@ -1,3 +1,5 @@
+import ProjectHeader from '../../../components/ProjectHeader';
+
 export const metadata = {
   title: 'meetwise - collaborative geospatial decision platform',
   alternates: {
@@ -5,9 +7,12 @@ export const metadata = {
   },
 };
 
-# meetwise - collaborative geospatial decision platform
-
-<br />
+<ProjectHeader
+  title="meetwise"
+  category="Geospatial"
+  date="December 2024"
+  github="https://github.com/Arjunnaikk/MeetWise"
+/>
 
 meetwise solves the "where should we meet" problem for group chats. instead of treating everyone as a straight-line distance to a geometric midpoint, it scans real road networks in parallel to minimize the worst commute in the group, lets certain members (like a host or client) pull the meeting point closer to them via travel-weight priorities, and can exclude outliers, like someone visiting from another city, from the calculation while still tracking their route.
 
@@ -21,8 +26,4 @@ a room syncs in real time across every connected device over server-sent events,
 - **geospatial:** nominatim, overpass api, osrm
 - **caching:** redis (ioredis) with in-memory fallback
 
-## links
-
-- [github](https://github.com/Arjunnaikk/MeetWise)
-
-note: supports a local offline sandbox mode alongside real-time shared rooms.
+_note: supports a local offline sandbox mode alongside real-time shared rooms._
