@@ -11,37 +11,42 @@ type BlockquoteProps = ComponentPropsWithoutRef<'blockquote'>;
 
 const components = {
   h1: (props: HeadingProps) => (
-    <h1 className="font-medium pt-12 mb-0" {...props} />
+    <h1 className="text-3xl font-bold tracking-tight text-white md:text-5xl font-display uppercase pt-6" {...props} />
   ),
   h2: (props: HeadingProps) => (
     <h2
-      className="text-gray-800 dark:text-zinc-200 font-medium mt-8 mb-3"
+      className="text-white font-semibold text-lg sm:text-xl tracking-tight mt-12 mb-5 uppercase border-b border-white/10 pb-2 relative after:content-[''] after:absolute after:bottom-[-1px] after:left-0 after:w-12 after:h-[2px] after:bg-emerald-400"
       {...props}
     />
   ),
   h3: (props: HeadingProps) => (
     <h3
-      className="text-gray-800 dark:text-zinc-200 font-medium mt-8 mb-3"
+      className="text-white font-medium text-base sm:text-lg tracking-tight mt-8 mb-3"
       {...props}
     />
   ),
-  h4: (props: HeadingProps) => <h4 className="font-medium" {...props} />,
+  h4: (props: HeadingProps) => <h4 className="font-medium text-zinc-100 mt-6" {...props} />,
   p: (props: ParagraphProps) => (
-    <p className="text-gray-800 dark:text-zinc-300 leading-snug" {...props} />
+    <p className="text-zinc-300 leading-relaxed text-[15px] sm:text-base my-5 font-normal antialiased max-w-3xl" {...props} />
   ),
   ol: (props: ListProps) => (
     <ol
-      className="text-gray-800 dark:text-zinc-300 list-decimal pl-5 space-y-2"
+      className="text-zinc-300 list-decimal pl-5 space-y-2 my-5 max-w-3xl"
       {...props}
     />
   ),
   ul: (props: ListProps) => (
     <ul
-      className="text-gray-800 dark:text-zinc-300 list-disc pl-5 space-y-1"
+      className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-8 max-w-3xl list-none pl-0"
       {...props}
     />
   ),
-  li: (props: ListItemProps) => <li className="pl-1" {...props} />,
+  li: (props: ListItemProps) => (
+    <li
+      className="relative overflow-hidden rounded-2xl border border-white/5 bg-zinc-950/40 p-5 text-zinc-300 transition-all duration-300 hover:border-emerald-500/20 hover:bg-emerald-500/[0.02] hover:-translate-y-1 shadow-lg shadow-black/20 group/li [&>strong]:block [&>strong]:mb-1.5 [&>strong]:text-[11px] [&>strong]:uppercase [&>strong]:tracking-wider [&>strong]:text-emerald-400 [&>strong]:font-semibold"
+      {...props}
+    />
+  ),
   em: (props: ComponentPropsWithoutRef<'em'>) => (
     <em className="font-medium" {...props} />
   ),
@@ -103,7 +108,7 @@ const components = {
   ),
   blockquote: (props: BlockquoteProps) => (
     <blockquote
-      className="ml-[0.075em] border-l-3 border-gray-300 pl-4 text-gray-700 dark:border-zinc-600 dark:text-zinc-300"
+      className="my-6 border-l-2 border-emerald-500/50 pl-4 italic text-zinc-400"
       {...props}
     />
   ),

@@ -340,22 +340,28 @@ export default function TerminalConsole() {
           download resume
         </button>
         <button
-          onClick={() => handleQuickClick("npm run ship")}
-          className="rounded border border-white/10 hover:border-violet-400/30 hover:bg-violet-400/5 hover:text-violet-300 bg-white/[0.02] px-2.5 py-1 text-[11px] font-mono text-zinc-400 transition-all duration-200 cursor-pointer"
+          onClick={() => handleQuickClick("cd github")}
+          className="rounded border border-white/10 hover:border-sky-400/30 hover:bg-sky-400/5 hover:text-sky-300 bg-white/[0.02] px-2.5 py-1 text-[11px] font-mono text-zinc-400 transition-all duration-200 cursor-pointer"
         >
-          npm run ship
+          cd github
         </button>
         <button
-          onClick={() => handleQuickClick("ping mumbai")}
-          className="rounded border border-white/10 hover:border-amber-400/30 hover:bg-amber-400/5 hover:text-amber-300 bg-white/[0.02] px-2.5 py-1 text-[11px] font-mono text-zinc-400 transition-all duration-200 cursor-pointer"
+          onClick={() => handleQuickClick("cd linkedin")}
+          className="rounded border border-white/10 hover:border-blue-400/30 hover:bg-blue-400/5 hover:text-blue-300 bg-white/[0.02] px-2.5 py-1 text-[11px] font-mono text-zinc-400 transition-all duration-200 cursor-pointer"
         >
-          ping mumbai
+          cd linkedin
         </button>
         <button
           onClick={() => handleQuickClick("clear")}
           className="rounded border border-white/10 hover:border-zinc-300/30 hover:bg-zinc-300/5 hover:text-zinc-200 bg-white/[0.02] px-2.5 py-1 text-[11px] font-mono text-zinc-400 transition-all duration-200 ml-auto cursor-pointer"
         >
           clear
+        </button>
+        <button
+          onClick={() => handleQuickClick("exit")}
+          className="rounded border border-white/10 hover:border-rose-400/30 hover:bg-rose-400/5 hover:text-rose-300 bg-white/[0.02] px-2.5 py-1 text-[11px] font-mono text-zinc-400 transition-all duration-200 cursor-pointer"
+        >
+          exit
         </button>
       </div>
     </div>

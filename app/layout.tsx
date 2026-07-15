@@ -39,7 +39,7 @@ export default function RootLayout({
         <Navbar />
         <div className="relative min-h-screen overflow-hidden">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.12),_transparent_34%),radial-gradient(circle_at_bottom_right,_rgba(34,197,94,0.08),_transparent_24%)]" />
-          <div className="relative flex min-h-screen flex-col justify-between px-6 pt-24 pb-8 md:px-10 md:pt-28 md:pb-10">
+          <div className="relative flex min-h-screen flex-col justify-between px-6 pt-24 pb-28 md:px-10 md:pt-28 md:pb-10">
             <main className="mx-auto w-full max-w-4xl space-y-6">
               {children}
             </main>
